@@ -1,22 +1,20 @@
 #include <iostream>
 #include <string>
-#include <ctype.h>
 
 
 const std::string changer="%20";
-const size_t size = 3;
 
 void changeSpace(std::string &s){
     auto it = s.end()-1;
 
-    while(isspace(*it)){
+    while(' '==(*it)){//trim
       s.erase(it);
       it--;
     }
    
    it=s.begin();
    while(it!=s.end()){
-       if(isspace(*it)){
+       if(' '==(*it)){
            s.erase(it);
            s.insert(it, changer.begin(), changer.end());
        }
