@@ -3,20 +3,28 @@
 
 std::string compressStr(std::string str){
     int counter=1;
-    std::string res;
-    int index1=0;
+    std::string res("");
+    auto it=str.begin();
 
-    while(index1<str.size())
+    res.push_back(*it);            
+    while(it!=(str.end()-1))
     {
-        if(index1==0) res.push_back(str[index1]);
-        if(str[index1]==str[index1+1]) counter++;
-        else {
-            res.push_back(counter+'0');
-            counter=1;
-            res.push_back(str[index1+1]);
+        if(*it!=*(it+1)){
+        res.push_back(counter+'0');
+        res.push_back(*(it+1));
+        counter=1;
         }
-        index1++;
-        
+        else{
+            counter++;
+        } 
+        it++;
+    }
+    if(*it==*(it-1))
+    {
+        res.push_back(counter+'0');
+    }
+    else {
+        res.push_back('1');
     }
     return (res.size()>str.size()) ? str : res;
     
@@ -24,7 +32,7 @@ std::string compressStr(std::string str){
 
 int main()
 {
-    std::string str("aabbbbccc");
+    std::string str("abbbbbbbbcdiioqw");
     std::cout<<compressStr(str);
     return 0;
 }
