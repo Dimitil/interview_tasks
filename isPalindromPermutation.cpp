@@ -11,12 +11,12 @@ bool isPaliPer(const std::string str){
         if(val<0 || val>127) {
             std::cerr<<"NOT ANSII SYMBOL";
             return false;
-    }
-    ar[val]++;
-    if(ar[val] % 2 == 1){
-        countOdd++;
-    }
-    else countOdd--;
+        }
+        ar[val]++;
+        if(ar[val] % 2 == 1){
+            countOdd++;
+        }
+        else countOdd--;
     }
     return countOdd <= 1;
 }
