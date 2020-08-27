@@ -11,8 +11,8 @@ void printMatrix(std::vector<std::vector<int>> const vec){
 }
 
 void nulifyMatrix(std::vector<std::vector<int>> &vec){//matrix[n][n]
-    bool *rowAr = new bool[vec.size()];
-    bool *colAr = new bool[vec[0].size()];
+    bool *rowAr = new bool[vec.size()]{0};
+    bool *colAr = new bool[vec[0].size()]{0};
 
     for(int i=0; i<vec.size(); i++){
         for(int j=0; j<vec[i].size(); j++){
@@ -40,6 +40,9 @@ void nulifyMatrix(std::vector<std::vector<int>> &vec){//matrix[n][n]
             }
         }
     }
+
+    delete[] colAr;
+    delete[] rowAr;
 }
 
 
