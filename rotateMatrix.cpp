@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-void printMatrix(std::vector<std::vector<int>> vec){
+void printMatrix(std::vector<std::vector<int>> const vec){
     for(int i=0; i<vec.size(); i++){
         for(int j=0; j<vec[i].size(); j++){
             std::cout<<vec[i][j]<<' ';
